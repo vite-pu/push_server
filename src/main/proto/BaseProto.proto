@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package protocol;
+
+option java_package = "org.deepex.service.connection.bean.protocol";
+option java_outer_classname = "DexProto";
+
+message DexProtocol {
+    string client_id = 1; //Identify a single client
+    string topics = 2; //order.$address.latest|market.$pair_symbol.[kline|buy|sell|detail|details|trade].$param
+    string op_type = 3; // sub,un_sub,ping,pong,push
+    bytes message = 4; //proto数据
+    int32 error_code = 5; //错误编码
+}
+
+
